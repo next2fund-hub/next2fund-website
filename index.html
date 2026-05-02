@@ -253,7 +253,7 @@
 
     .nav-links a:hover { color: var(--teal-mid); }
 
-    .nav-dropdown { position: relative; }
+    .nav-dropdown { position: relative; display: flex; align-items: center; }
     .nav-dropdown > a::after { content: ' ▾'; font-size: 10px; }
     .dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #fff; box-shadow: 0 8px 32px rgba(0,0,0,.12); border-radius: 8px; padding: 8px 0 8px; margin-top: 0; min-width: 220px; z-index: 200; } .dropdown-menu::before { content: ""; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
     .nav-dropdown:hover .dropdown-menu { display: block; }
