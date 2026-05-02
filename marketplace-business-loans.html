@@ -130,6 +130,8 @@
     @media (max-width: 900px) {
       .nav { padding: 0 24px; }
       .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-apply-btn { display: none; }
       .tbl-header { display: none; }
       .product-row { grid-template-columns: 1fr; gap: 12px; }
       .prod-cell { border-left: none; text-align: left; padding: 0; }
@@ -137,12 +139,33 @@
       .footer { padding: 48px 24px 24px; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* MOBILE HAMBURGER */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 8px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: transform .25s, opacity .25s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #fff; z-index: 400; flex-direction: column; overflow-y: auto; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav-header { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 72px; border-bottom: 1px solid #eee; flex-shrink: 0; }
+    .mobile-nav-header img { height: 52px; }
+    .mobile-close { background: none; border: none; font-size: 28px; cursor: pointer; color: var(--navy); line-height: 1; }
+    .mobile-nav-links { list-style: none; padding: 8px 0; flex: 1; }
+    .mobile-nav-links > li { border-bottom: 1px solid #f0f0f0; }
+    .mobile-nav-links > li > a { display: block; padding: 16px 24px; font-family: 'Montserrat',sans-serif; font-weight: 700; font-size: 15px; color: var(--navy); text-decoration: none; }
+    .mobile-sub-links { background: #f7fafc; padding: 4px 0 8px; }
+    .mobile-sub-links a { display: block; padding: 11px 24px 11px 36px; font-family: 'Montserrat',sans-serif; font-weight: 600; font-size: 14px; color: var(--teal-mid); text-decoration: none; }
+    .mobile-nav-footer { padding: 20px 24px 32px; }
+    .mobile-nav-footer .btn-orange { display: block; text-align: center; width: 100%; padding: 14px; font-size: 15px; }
   </style>
 </head>
 <body>
 
 <nav class="nav">
-  <div style="width:120px;"></div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-center">
     <div class="nav-brand">
       <img src="brand_assets/N9.jpg" alt="Next 2 Fund" class="nav-logo" />
@@ -166,8 +189,34 @@
       <li><a href="mailto:info@next2fund.com">Contact</a></li>
     </ul>
   </div>
-  <a href="apply.html" class="btn-orange" style="font-size:13px;padding:10px 22px;">Apply Now</a>
+  <a href="apply.html" class="btn-orange nav-apply-btn" style="font-size:13px;padding:10px 22px;">Apply Now</a>
 </nav>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header">
+    <img src="brand_assets/N9.jpg" alt="Next 2 Fund" />
+    <button class="mobile-close" id="mobileClose">&#x2715;</button>
+  </div>
+  <ul class="mobile-nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li>
+      <a href="marketplace.html">Marketplace</a>
+      <div class="mobile-sub-links">
+        <a href="marketplace.html">Funding Marketplace</a>
+        <a href="marketplace-line-of-credit.html">Business Line of Credit</a>
+        <a href="marketplace-credit-cards.html">0% Promo Credit Cards</a>
+        <a href="marketplace-term-loans.html">Term Loans</a>
+        <a href="marketplace-business-loans.html">Business Loans</a>
+        <a href="marketplace-sba.html">SBA Loans</a>
+        <a href="marketplace-equipment-finance.html">Equipment Finance</a>
+      </div>
+    </li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="mailto:info@next2fund.com">Contact</a></li>
+  </ul>
+  <div class="mobile-nav-footer">
+    <a href="apply.html" class="btn-orange">Apply Now</a>
+  </div>
+</div>
 
 <main class="page-wrap">
 
@@ -264,6 +313,11 @@ document.querySelectorAll(".nav-dropdown").forEach(function(d){
   m.addEventListener("mouseenter",show);
   m.addEventListener("mouseleave",hide);
 });
+
+  // Mobile menu
+  var ham=document.getElementById('hamburger'),mob=document.getElementById('mobileNav'),cls=document.getElementById('mobileClose');
+  if(ham){ham.addEventListener('click',function(){ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});}
+  if(cls){cls.addEventListener('click',function(){ham.classList.remove('open');mob.classList.remove('open');document.body.style.overflow='';});}
 </script>
 <!-- nav-dropdown-js -->
 </body>
