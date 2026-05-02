@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://next2fund.com/sitemap.xml
