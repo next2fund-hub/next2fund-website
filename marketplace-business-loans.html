@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Loans | Next 2 Fund</title>
+  <meta name="description" content="Get short term and long term business loans through Next 2 Fund. $5k–$500k, fast approval in as little as 24 hours. Competitive rates for all business sizes." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://next2fund.com/marketplace-business-loans.html" />
+  <link rel="icon" type="image/jpeg" href="/brand_assets/N9.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --teal-dark: #004d5b;
+      --teal-mid:  #007a8a;
+      --teal-light:#00b4cc;
+      --orange:    #f47c20;
+      --orange-h:  #d96a10;
+      --navy:      #0d1b2a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', Arial, sans-serif; font-size: 16px; color: #1a1a1a; overflow-x: hidden; background: #fff; }
+    h1,h2,h3,h4,h5 { font-family: 'Montserrat', Arial, sans-serif; }
+
+    /* NAV */
+    .nav { position: sticky; top: 0; z-index: 100; background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.08); display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 108px; }
+    .nav-center { display: flex; align-items: center; gap: 32px; }
+    .nav-brand { display: flex; flex-direction: column; align-items: center; }
+    .nav-logo { height: 88px; width: auto; }
+    .nav-phone { font-family: 'Montserrat',sans-serif; font-weight: 700; font-size: 14px; color: var(--teal-mid); text-decoration: none; margin-top: -4px; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { text-decoration: none; color: #333; font-family: 'Montserrat',sans-serif; font-weight: 600; font-size: 14px; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--teal-mid); }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a::after { content: ' ▾'; font-size: 10px; }
+    .dropdown-menu { display: none; position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: #fff; box-shadow: 0 8px 32px rgba(0,0,0,.12); border-radius: 8px; padding: 8px 0; min-width: 220px; z-index: 200; }
+    .nav-dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a { display: block; padding: 10px 20px; font-family: 'Montserrat',sans-serif; font-weight: 600; font-size: 13px; color: #333; text-decoration: none; transition: color .2s, background .2s; white-space: nowrap; }
+    .dropdown-menu a:hover { color: var(--teal-mid); background: #f0f8fa; }
+    .btn-orange { background: var(--orange); color: #fff; font-family: 'Montserrat',sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .04em; padding: 12px 28px; border-radius: 4px; border: none; cursor: pointer; text-decoration: none; display: inline-block; transition: background .2s, transform .15s; }
+    .btn-orange:hover { background: var(--orange-h); transform: translateY(-1px); }
+
+    /* PAGE */
+    .page-wrap { max-width: 1000px; margin: 0 auto; padding: 64px 48px 80px; }
+
+    .page-title {
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 900;
+      color: var(--navy);
+      text-align: center;
+      letter-spacing: -0.02em;
+      margin-bottom: 48px;
+    }
+
+    /* TABLE HEADER */
+    .tbl-header {
+      display: grid;
+      grid-template-columns: 2.5fr 1fr 1fr 1.2fr 1.2fr 130px;
+      padding: 0 20px 14px;
+      border-bottom: 2px solid #e0eef2;
+      margin-bottom: 20px;
+    }
+    .tbl-header span {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--teal-light);
+      text-align: center;
+    }
+    .tbl-header span:first-child { text-align: left; }
+
+    /* PRODUCT ROW */
+    .product-row {
+      display: grid;
+      grid-template-columns: 2.5fr 1fr 1fr 1.2fr 1.2fr 130px;
+      align-items: center;
+      background: #f4f7fa;
+      border-radius: 8px;
+      padding: 24px 20px;
+      margin-bottom: 20px;
+      gap: 0;
+      transition: box-shadow .2s;
+    }
+    .product-row:hover { box-shadow: 0 4px 20px rgba(0,122,138,.1); }
+
+    .prod-name { font-family: 'Montserrat',sans-serif; font-weight: 700; font-size: 16px; color: var(--navy); margin-bottom: 8px; }
+    .prod-desc { font-size: 13px; color: #555; line-height: 1.6; text-align: center; max-width: 280px; }
+
+    .prod-cell {
+      text-align: center;
+      font-size: 14px;
+      color: var(--navy);
+      font-weight: 500;
+      line-height: 1.5;
+      border-left: 1px solid #d0dde5;
+      padding: 0 12px;
+    }
+    .prod-cell .sub { font-size: 12px; color: var(--teal-mid); display: block; font-weight: 400; margin-top: 2px; }
+
+    .btn-get {
+      background: var(--teal-light);
+      color: #fff;
+      font-family: 'Montserrat',sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      transition: background .2s, transform .15s;
+      white-space: nowrap;
+    }
+    .btn-get:hover { background: var(--teal-mid); transform: translateY(-1px); }
+
+    .disclaimer { font-size: 12px; color: #999; text-align: center; margin-top: 40px; line-height: 1.65; max-width: 760px; margin-left: auto; margin-right: auto; }
+
+    /* FOOTER */
+    .footer { background: var(--navy); padding: 64px 48px 32px; color: rgba(255,255,255,.7); }
+    .footer-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 36px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .footer-col h5 { font-family: 'Montserrat',sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 20px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { color: rgba(255,255,255,.7); text-decoration: none; font-size: 14px; transition: color .2s; }
+    .footer-col ul li a:hover { color: var(--teal-light); }
+    .footer-bottom { max-width: 1100px; margin: 28px auto 0; text-align: center; font-size: 13px; color: rgba(255,255,255,.35); line-height: 1.65; }
+
+    @media (max-width: 900px) {
+      .nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .tbl-header { display: none; }
+      .product-row { grid-template-columns: 1fr; gap: 12px; }
+      .prod-cell { border-left: none; text-align: left; padding: 0; }
+      .page-wrap { padding: 40px 24px 60px; }
+      .footer { padding: 48px 24px 24px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div style="width:120px;"></div>
+  <div class="nav-center">
+    <div class="nav-brand">
+      <img src="brand_assets/N9.jpg" alt="Next 2 Fund" class="nav-logo" />
+      <a href="tel:7869469010" class="nav-phone">(786) 946-9010</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="marketplace.html" class="active">Marketplace</a>
+        <div class="dropdown-menu">
+          <a href="marketplace.html">Funding Marketplace</a>
+          <a href="marketplace-line-of-credit.html">Business Line of Credit</a>
+          <a href="marketplace-credit-cards.html">0% Promo Credit Cards</a>
+          <a href="marketplace-term-loans.html">Term Loans</a>
+          <a href="marketplace-business-loans.html">Business Loans</a>
+        </div>
+      </li>
+      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="mailto:info@next2fund.com">Contact</a></li>
+    </ul>
+  </div>
+  <a href="apply.html" class="btn-orange" style="font-size:13px;padding:10px 22px;">Apply Now</a>
+</nav>
+
+<main class="page-wrap">
+
+  <h1 class="page-title">Business Loans</h1>
+
+  <!-- Table Header -->
+  <div class="tbl-header">
+    <span>Funding Product</span>
+    <span>Amount</span>
+    <span>Access</span>
+    <span>Rates</span>
+    <span>Terms</span>
+    <span>Starting</span>
+  </div>
+
+  <!-- Short Term Business Loan -->
+  <div class="product-row">
+    <div>
+      <div class="prod-name">Short Term Business Loan</div>
+      <div class="prod-desc">Access funds very quickly for any business expenses. Typically more expensive than alternative options.</div>
+    </div>
+    <div class="prod-cell">$5k – $100k</div>
+    <div class="prod-cell">24 – 72 Hours</div>
+    <div class="prod-cell">15% – 35%</div>
+    <div class="prod-cell">6 – 12 Months</div>
+    <div style="text-align:center;"><a href="apply.html" class="btn-get">Get Started</a></div>
+  </div>
+
+  <!-- Business Term Loan -->
+  <div class="product-row">
+    <div>
+      <div class="prod-name">Business Term Loan</div>
+      <div class="prod-desc">Great option for longer terms for more established businesses. This is a great resource for general working capital needs.</div>
+    </div>
+    <div class="prod-cell">$20k – $500k</div>
+    <div class="prod-cell">5 – 10 Days</div>
+    <div class="prod-cell">11% – 25%</div>
+    <div class="prod-cell">1 – 5 Years</div>
+    <div style="text-align:center;"><a href="apply.html" class="btn-get">Get Started</a></div>
+  </div>
+
+  <p class="disclaimer"><strong style="color:#bbb;">Disclaimer:</strong> We may receive compensation from lenders if you fund through our links. We do not allow this to affect our recommendations. Actual funding amounts and rates vary and are not guaranteed. Approval depends on personal and/or business creditworthiness and lender criteria.</p>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul><li><a href="#">About Us</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h5>Marketplace</h5>
+      <ul>
+        <li><a href="marketplace-line-of-credit.html">Business Line of Credit</a></li>
+        <li><a href="marketplace-credit-cards.html">0% Credit Cards</a></li>
+        <li><a href="marketplace-term-loans.html">Term Loans</a></li>
+        <li><a href="marketplace-business-loans.html">Business Loans</a></li>
+        <li><a href="marketplace-sba.html">SBA Loans</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <address style="font-style:normal;">
+        <ul>
+          <li><a href="mailto:info@next2fund.com">info@next2fund.com</a></li>
+          <li><a href="tel:+17869469010">(786) 946-9010</a></li>
+          <li>1430 S Dixie Hwy</li>
+          <li>Coral Gables, FL 33146</li>
+        </ul>
+      </address>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Next 2 Fund. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
