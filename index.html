@@ -1005,7 +1005,10 @@
       .testimonials-header { flex-direction: column; align-items: flex-start; gap: 28px; }
       .stats-row { justify-content: flex-start; }
       .stat-item { text-align: left; }
-      .footer-grid { grid-template-columns: 1fr 1fr; padding: 0 0 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px 24px; padding: 0 0 40px; }
+      .footer-grid .footer-col { min-width: 0; }
+      .footer-grid .footer-col ul li a { font-size: 13px; }
+      .footer-grid .footer-col:last-child { grid-column: 1 / -1; }
       .footer { padding: 48px 24px 24px; }
       .faq-section { padding: 60px 24px; }
       .cta-band { padding: 56px 24px; }
@@ -1186,63 +1189,6 @@
   <p style="text-align:center;font-size:12px;color:#999;margin-top:40px;line-height:1.65;">Next2Fund is not a lender. We provide education, guidance, and access to funding resources. Approval and funding outcomes vary by lender and individual credit profile.</p>
 </section>
 
-<!-- ══ TESTIMONIALS ═════════════════════════════════════════════ -->
-<section class="testimonials-section">
-  <div class="testimonials-inner">
-    <div class="testimonials-header">
-      <div>
-        <div class="section-tag">Client Stories</div>
-        <h2 class="section-title">Here's What Our<br />Clients Think</h2>
-      </div>
-      <div class="stats-row">
-        <div class="stat-item">
-          <div class="stat-num">5k+</div>
-          <div class="stat-label">Businesses Funded</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">30k+</div>
-          <div class="stat-label">Applications Processed</div>
-        </div>
-      </div>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Next 2 Fund got us a $250k business line of credit in under a week. Their team walked us through every step and found us a rate we couldn't believe. Game-changer for our expansion."</blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar">JM</div>
-          <div>
-            <div class="author-name">James M.</div>
-            <div class="author-title">CEO, Midwest Logistics</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"I'd been turned down by two banks before finding Next 2 Fund. They looked at my full picture, not just a credit score, and found a lender who believed in my business. Funded in 3 days."</blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar">SR</div>
-          <div>
-            <div class="author-name">Sofia R.</div>
-            <div class="author-title">Owner, Bloom Café Group</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"The SBA loan process felt intimidating until Next 2 Fund stepped in. They handled all the paperwork, communicated everything clearly, and we closed in record time. Highly recommend."</blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar">DK</div>
-          <div>
-            <div class="author-name">David K.</div>
-            <div class="author-title">Founder, Apex Construction</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <p style="text-align:center;font-size:12px;color:rgba(255,255,255,.4);margin-top:40px;line-height:1.65;position:relative;z-index:1;">Next2Fund is not a lender. We provide education, guidance, and access to funding resources. Approval and funding outcomes vary by lender and individual credit profile.</p>
-</section>
 
 
 <!-- ══ FAQ ═══════════════════════════════════════════════════════ -->
@@ -1295,7 +1241,7 @@
 <section class="cta-band">
   <h2>Let's Grow Together</h2>
   <p>Join thousands of businesses that have used Next 2 Fund to unlock the capital they need to scale.</p>
-  <a href="#" class="btn-orange">Apply for Free Today</a>
+  <a href="apply.html" class="btn-orange">Apply Now</a>
 </section>
 
 </main>
