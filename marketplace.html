@@ -140,8 +140,8 @@
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     .drawer-overlay { display: none; position: fixed; inset: 0; background: rgba(13,27,42,.55); z-index: 490; backdrop-filter: blur(2px); }
     .drawer-overlay.open { display: block; }
-    .nav-drawer { position: fixed; top: 0; right: -320px; width: 300px; max-width: 85vw; height: 100%; background: #fff; z-index: 500; display: flex; flex-direction: column; box-shadow: -8px 0 40px rgba(0,0,0,.18); transition: right .32s cubic-bezier(.4,0,.2,1); }
-    .nav-drawer.open { right: 0; }
+    .nav-drawer { position: fixed; top: 0; right: 0; transform: translateX(100%); width: 300px; max-width: 85vw; height: 100%; background: #fff; z-index: 500; display: flex; flex-direction: column; box-shadow: -8px 0 40px rgba(0,0,0,.18); transition: transform .32s cubic-bezier(.4,0,.2,1); }
+    .nav-drawer.open { transform: translateX(0); }
     .drawer-head { display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 68px; border-bottom: 2px solid var(--teal-light); flex-shrink: 0; }
     .drawer-head img { height: 48px; }
     .drawer-close { background: none; border: none; cursor: pointer; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--navy); font-size: 20px; transition: background .2s; }
@@ -189,11 +189,11 @@
   </div>
   <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
     <a href="apply.html" class="btn-orange nav-apply-btn" style="font-size:13px;padding:10px 22px;">Apply Now</a>
-    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="drawer-overlay" id="drawerOverlay"></div>
-<nav class="nav-drawer" id="navDrawer" aria-label="Mobile menu">
+<nav class="nav-drawer" id="navDrawer" aria-label="Mobile menu" inert>
   <div class="drawer-head">
     <img src="brand_assets/N9.jpg" alt="Next 2 Fund" />
     <button class="drawer-close" id="drawerClose">&#x2715;</button>
@@ -393,9 +393,33 @@ document.querySelectorAll(".nav-dropdown").forEach(function(d){
 
 
   var ham=document.getElementById('hamburger'),drawer=document.getElementById('navDrawer'),overlay=document.getElementById('drawerOverlay'),dcls=document.getElementById('drawerClose');
-  function openDrawer(){if(ham)ham.classList.add('open');if(drawer)drawer.classList.add('open');if(overlay)overlay.classList.add('open');document.body.style.overflow='hidden';}
-  function closeDrawer(){if(ham)ham.classList.remove('open');if(drawer)drawer.classList.remove('open');if(overlay)overlay.classList.remove('open');document.body.style.overflow='';}
-  if(ham)ham.addEventListener('click',openDrawer);
+  function trapTab(e){
+    if(e.key==='Escape'){closeDrawer();return;}
+    if(e.key!=='Tab')return;
+    var f=drawer.querySelectorAll('a,button');
+    if(!f.length)return;
+    var first=f[0],last=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+  }
+  function openDrawer(){
+    if(ham){ham.classList.add('open');ham.setAttribute('aria-expanded','true');}
+    if(drawer){drawer.classList.add('open');drawer.removeAttribute('inert');}
+    if(overlay)overlay.classList.add('open');
+    document.body.style.overflow='hidden';
+    document.addEventListener('keydown',trapTab);
+    var firstLink=drawer&&drawer.querySelector('a,button');
+    if(firstLink)firstLink.focus();
+  }
+  function closeDrawer(){
+    if(ham){ham.classList.remove('open');ham.setAttribute('aria-expanded','false');}
+    if(drawer){drawer.classList.remove('open');drawer.setAttribute('inert','');}
+    if(overlay)overlay.classList.remove('open');
+    document.body.style.overflow='';
+    document.removeEventListener('keydown',trapTab);
+    if(ham)ham.focus();
+  }
+  if(ham)ham.addEventListener('click',function(){if(drawer&&drawer.classList.contains('open'))closeDrawer();else openDrawer();});
   if(dcls)dcls.addEventListener('click',closeDrawer);
   if(overlay)overlay.addEventListener('click',closeDrawer);
 </script>
