@@ -256,13 +256,13 @@
     .nav-dropdown { position: relative; display: flex; align-items: center; }
     .nav-dropdown > a::after { content: ' ▾'; font-size: 10px; }
     .dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #fff; box-shadow: 0 8px 32px rgba(0,0,0,.12); border-radius: 8px; padding: 8px 0 8px; margin-top: 0; min-width: 220px; z-index: 200; } .dropdown-menu::before { content: ""; position: absolute; top: -10px; left: 0; right: 0; height: 10px; }
-    .nav-dropdown:hover .dropdown-menu { display: block; }
+    .nav-dropdown:hover .dropdown-menu, .nav-dropdown:focus-within .dropdown-menu { display: block; }
     .dropdown-menu a { display: block; padding: 10px 20px; font-family: 'Montserrat',sans-serif; font-weight: 600; font-size: 13px; color: #333; text-decoration: none; transition: color .2s, background .2s; white-space: nowrap; }
     .dropdown-menu a:hover { color: var(--teal-mid); background: #f0f8fa; }
 
     .btn-orange {
       background: var(--orange);
-      color: #fff;
+      color: var(--navy);
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
       font-size: 14px;
@@ -399,8 +399,8 @@
 
     .section-tag {
       display: inline-block;
-      background: rgba(0,122,138,.1);
-      color: var(--teal-mid);
+      background: #e3f2f4;
+      color: #006674;
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
       font-size: 12px;
@@ -767,7 +767,7 @@
       font-size: 13px;
       letter-spacing: .1em;
       text-transform: uppercase;
-      color: #999;
+      color: #6b6b6b;
       margin-bottom: 36px;
     }
 
@@ -812,6 +812,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
       padding: 22px 0;
       cursor: pointer;
       font-family: 'Montserrat', sans-serif;
@@ -951,13 +955,13 @@
       color: rgba(255,255,255,.55);
     }
 
-    .footer-col h5 {
+    .footer-col h3 {
       font-family: 'Montserrat', sans-serif;
       font-size: 13px;
       font-weight: 700;
       letter-spacing: .1em;
       text-transform: uppercase;
-      color: rgba(255,255,255,.4);
+      color: rgba(255,255,255,.5);
       margin-bottom: 20px;
     }
 
@@ -982,7 +986,7 @@
       text-align: center;
       gap: 16px;
       font-size: 13px;
-      color: rgba(255,255,255,.35);
+      color: rgba(255,255,255,.5);
     }
 
     /* ── RESPONSIVE ──────────────────────── */
@@ -1043,9 +1047,11 @@
   </style>
 </head>
 <body>
+<a href="#main-content" style="position:absolute;left:-9999px;top:0;background:#fff;color:#0d1b2a;padding:12px 20px;z-index:1000;font-family:Montserrat,sans-serif;font-weight:700;border-radius:4px;" onfocus="this.style.left='16px';this.style.top='16px';" onblur="this.style.left='-9999px';">Skip to main content</a>
+
 
 <!-- ══ NAVBAR ══════════════════════════════════════════════════ -->
-<nav class="nav">
+<nav class="nav" aria-label="Primary">
   <div class="nav-brand">
       <img src="brand_assets/N9.jpg" alt="Next 2 Fund" class="nav-logo" />
       <a href="tel:7869469010" class="nav-phone">(786) 946-9010</a>
@@ -1075,7 +1081,7 @@
   </div>
 </nav>
 <div class="drawer-overlay" id="drawerOverlay"></div>
-<div class="nav-drawer" id="navDrawer">
+<nav class="nav-drawer" id="navDrawer" aria-label="Mobile menu">
   <div class="drawer-head">
     <img src="brand_assets/N9.jpg" alt="Next 2 Fund" />
     <button class="drawer-close" id="drawerClose">&#x2715;</button>
@@ -1102,7 +1108,7 @@
     <a href="apply.html" class="btn-orange">Apply Now</a>
     <a href="tel:+17869469010" class="drawer-phone">(786) 946-9010</a>
   </div>
-</div>
+</nav>
 
 <main id="main-content">
 
@@ -1148,7 +1154,7 @@
       <p>Get approved and funded in as little as 24 hours. We handle the details so you can focus on your business.</p>
     </div>
   </div>
-  <p style="text-align:center;font-size:12px;color:#999;margin-top:40px;line-height:1.65;">Next2Fund is not a lender. We provide education, guidance, and access to funding resources. Approval and funding outcomes vary by lender and individual credit profile.</p>
+  <p style="text-align:center;font-size:12px;color:#6b6b6b;margin-top:40px;line-height:1.65;">Next2Fund is not a lender. We provide education, guidance, and access to funding resources. Approval and funding outcomes vary by lender and individual credit profile.</p>
 </section>
 
 <!-- ══ WHAT SETS US APART ═══════════════════════════════════════ -->
@@ -1164,28 +1170,28 @@
       <div class="apart-grid">
         <div class="apart-card">
           <div class="apart-icon">🤝</div>
-          <h4>We Work For You</h4>
+          <h3>We Work For You</h3>
           <p>We represent your interests, not the lender's. Our advisors are incentivized to find you the best deal.</p>
         </div>
         <div class="apart-card">
           <div class="apart-icon">🏦</div>
-          <h4>Multiple Lenders</h4>
+          <h3>Multiple Lenders</h3>
           <p>Access to 50+ lenders and financial institutions means more options and better rates for your business.</p>
         </div>
         <div class="apart-card">
           <div class="apart-icon">⚡</div>
-          <h4>Fast Approval</h4>
+          <h3>Fast Approval</h3>
           <p>Our streamlined process delivers decisions in hours, not weeks. Time is money — we respect yours.</p>
         </div>
         <div class="apart-card">
           <div class="apart-icon">💰</div>
-          <h4>Up to $5M</h4>
+          <h3>Up to $5M</h3>
           <p>Whether you need $10k or $5 million, we have the network and expertise to fund businesses at every stage.</p>
         </div>
       </div>
     </div>
   </div>
-  <p style="text-align:center;font-size:12px;color:#999;margin-top:40px;line-height:1.65;">Next2Fund is not a lender. We provide education, guidance, and access to funding resources. Approval and funding outcomes vary by lender and individual credit profile.</p>
+  <p style="text-align:center;font-size:12px;color:#6b6b6b;margin-top:40px;line-height:1.65;">Next2Fund is not a lender. We provide education, guidance, and access to funding resources. Approval and funding outcomes vary by lender and individual credit profile.</p>
 </section>
 
 
@@ -1199,39 +1205,39 @@
       <p class="section-sub" style="margin:0 auto;">Everything you need to know about working with Next 2 Fund.</p>
     </div>
     <div class="faq-item open">
-      <div class="faq-q" onclick="toggleFaq(this)">
+      <button type="button" class="faq-q" aria-expanded="true" aria-controls="faq-a-1" onclick="toggleFaq(this)">
         Do I need perfect credit to apply?
-        <span class="faq-chevron">▾</span>
-      </div>
-      <p class="faq-a">No. We work with business owners across the full credit spectrum. We look at the complete picture of your business — revenue, time in business, cash flow, and more — not just your credit score.</p>
+        <span class="faq-chevron" aria-hidden="true">▾</span>
+      </button>
+      <p class="faq-a" id="faq-a-1">No. We work with business owners across the full credit spectrum. We look at the complete picture of your business — revenue, time in business, cash flow, and more — not just your credit score.</p>
     </div>
     <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
+      <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-2" onclick="toggleFaq(this)">
         How long does the application take?
-        <span class="faq-chevron">▾</span>
-      </div>
-      <p class="faq-a">Our initial application takes less than 5 minutes to complete online. A funding specialist will follow up within 24 business hours to discuss your options and next steps.</p>
+        <span class="faq-chevron" aria-hidden="true">▾</span>
+      </button>
+      <p class="faq-a" id="faq-a-2">Our initial application takes less than 5 minutes to complete online. A funding specialist will follow up within 24 business hours to discuss your options and next steps.</p>
     </div>
     <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
+      <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-3" onclick="toggleFaq(this)">
         Does applying affect my credit score?
-        <span class="faq-chevron">▾</span>
-      </div>
-      <p class="faq-a">The initial application only requires a soft credit pull, which does not impact your credit score. A hard inquiry only occurs when you formally apply with a specific lender, which we'll always notify you about first.</p>
+        <span class="faq-chevron" aria-hidden="true">▾</span>
+      </button>
+      <p class="faq-a" id="faq-a-3">The initial application only requires a soft credit pull, which does not impact your credit score. A hard inquiry only occurs when you formally apply with a specific lender, which we'll always notify you about first.</p>
     </div>
     <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
+      <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-4" onclick="toggleFaq(this)">
         What types of businesses do you work with?
-        <span class="faq-chevron">▾</span>
-      </div>
-      <p class="faq-a">We work with businesses across virtually every industry — from restaurants and retail to construction, healthcare, and tech. We require a minimum of 6 months in business and $5,000/month in revenue to qualify for most products.</p>
+        <span class="faq-chevron" aria-hidden="true">▾</span>
+      </button>
+      <p class="faq-a" id="faq-a-4">We work with businesses across virtually every industry — from restaurants and retail to construction, healthcare, and tech. We require a minimum of 6 months in business and $5,000/month in revenue to qualify for most products.</p>
     </div>
     <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
+      <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-5" onclick="toggleFaq(this)">
         What are your fees?
-        <span class="faq-chevron">▾</span>
-      </div>
-      <p class="faq-a">Our consultation and matching services are completely free to you. We're compensated by our lending partners, which means there's no cost for you to use our platform — and no hidden fees.</p>
+        <span class="faq-chevron" aria-hidden="true">▾</span>
+      </button>
+      <p class="faq-a" id="faq-a-5">Our consultation and matching services are completely free to you. We're compensated by our lending partners, which means there's no cost for you to use our platform — and no hidden fees.</p>
     </div>
   </div>
 </section>
@@ -1249,13 +1255,13 @@
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-col">
-      <h5>Company</h5>
+      <h3>Company</h3>
       <ul>
         <li><a href="#">About Us</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h5>Marketplace</h5>
+      <h3>Marketplace</h3>
       <ul>
         <li><a href="#">Business Line of Credit</a></li>
         <li><a href="#">Business Credit Cards</a></li>
@@ -1265,7 +1271,7 @@
       </ul>
     </div>
     <div class="footer-col">
-      <h5>Contact</h5>
+      <h3>Contact</h3>
       <address style="font-style:normal;">
         <ul>
           <li><a href="https://maps.google.com/?q=1430+S+Dixie+Hwy+Coral+Gables+FL+33146" rel="noopener noreferrer" target="_blank">1430 S Dixie Hwy</a></li>
@@ -1276,14 +1282,14 @@
       </address>
     </div>
     <div class="footer-col">
-      <h5>Legal</h5>
+      <h3>Legal</h3>
       <ul>
         <li><a href="#">Privacy Policy</a></li>
         <li><a href="#">Terms of Service</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h5>Socials</h5>
+      <h3>Socials</h3>
       <div class="social-icons">
         <a href="#" class="social-icon" aria-label="LinkedIn">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1310,8 +1316,11 @@
   function toggleFaq(el) {
     const item = el.closest('.faq-item');
     const wasOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    if (!wasOpen) item.classList.add('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+    });
+    if (!wasOpen) { item.classList.add('open'); el.setAttribute('aria-expanded', 'true'); }
   }
 </script>
 
